@@ -2,7 +2,13 @@ import news from "../assets/news-red.svg"
 import report from "../assets/financial-reports-red.svg"
 import foundation from "../assets/uba-foundation-red.svg"
 import leo from "../assets/leo-meta-verse-chat-face.jpg"
+import leobday from "../assets/Web-banner.jpg"
+import focus from "../assets/UBA-Foundation-2-scaled.jpg"
+import {FaCircle} from "react-icons/fa"
+import {useState} from "react"
 const LandingPage = () => {
+  const [active, setActive] = useState(0)
+  const circle = [<FaCircle/>, <FaCircle/>, <FaCircle/>, <FaCircle/>]
   return (
     <div className=" mt-[70px] ">
         <section>
@@ -46,7 +52,7 @@ const LandingPage = () => {
             </select>
             <button className="bg-[#CD1307] text-white font-medium rounded-md h-[50px]">GET STARTED</button>
           </form>
-          <div className=" pt-5 mb-5 w-full h-[300px]">
+          <div className=" pt-5 mb-5 w-full h-[350px]">
             <img src={leo} className="rounded-md h-full w-full object-cover" alt="" />
           </div>
           
@@ -62,9 +68,42 @@ const LandingPage = () => {
           </div>
         </section>
 
-        <section>
-          <div className="">
-
+        <section className="px-4 mt-5">
+          <div className=" shadow-lg pt-3">
+              <div className="h-[280px] w-full ">
+              <img src={leobday} className="rounded-md h-full object-cover object-right-[20]" alt="" />
+              </div>
+              <div className="p-3">
+                <h3 className="text-[18px] mb-4">REPORT</h3>
+                <h1 className="text-[22px] mb-8 font-medium leading-7">UBA's Leo Celebrates Six Years of Impact, Promises New Offerings.</h1>
+                <a href="#" className="text-[#CD1307]">READ MORE</a>
+              </div>
+              <div className="text-[#CD1307] p-3 text-[14px] flex gap-1 justify-end">
+                {circle?.map((prop, index)=>(
+                  <div onClick={()=>setActive(index)} className={active === index ? "text-[#CD1307]" : "text-[#d26861f8]"} key={index}>
+                    
+                  {prop}
+                </div>
+                ))}
+              </div>
+          </div>
+          <div className=" shadow-lg mt-5 pt-3">
+              <div className="h-[280px] w-full ">
+              <img src={focus} className="rounded-md h-full object-cover object-right-[20]" alt="" />
+              </div>
+              <div className="p-3">
+                <h3 className="text-[18px] mb-4">COUNTRY IN FOCUS</h3>
+                <h1 className="text-[22px] mb-8 font-medium leading-7">Physical Fitness, Regular Checks Essential for Good Financial Decisions, Experts Tell SMEs in UBA Business Series.</h1>
+                <a href="#" className="text-[#CD1307]">READ MORE</a>
+              </div>
+              <div className=" p-3 text-[14px] flex gap-1 justify-end">
+                {circle?.map((prop, index)=>(
+                  <div onClick={()=>setActive(index)} className={active === index ? "text-[#CD1307]" : "text-[#d26861f8]"} key={index}>
+                    
+                    {prop}
+                  </div>
+                ))}
+              </div>
           </div>
         </section>
 
