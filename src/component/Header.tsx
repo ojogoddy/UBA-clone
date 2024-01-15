@@ -4,7 +4,7 @@ import {GoLock} from "react-icons/go"
 
 const Header = () => {
   return (
-    <div className="flex bg-white items-center justify-between px-4 h-[70px] fixed top-0 w-full">
+    <div className="flex z-20 bg-white items-center justify-between px-4 h-[70px] fixed top-0 w-full">
         <nav className=" flex items-center gap-x-2">
             <li className=" text-gray-500 list-none text-[30px]">
                 <MdMenu/>

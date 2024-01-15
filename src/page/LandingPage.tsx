@@ -6,12 +6,68 @@ import leobday from "../assets/Web-banner.jpg"
 import focus from "../assets/UBA-Foundation-2-scaled.jpg"
 import {FaCircle} from "react-icons/fa"
 import {useState} from "react"
+import round from "../assets/UBA-Foundation-2-scaled.jpg"
+import first from "../assets/Supersavers-Website-banner-B.jpg"
+import map from "../assets/world-map.png"
 const LandingPage = () => {
   const [active, setActive] = useState(0)
   const circle = [<FaCircle/>, <FaCircle/>, <FaCircle/>, <FaCircle/>]
+  const hero =[
+    {
+      background: first,
+      title: "Save and win million",
+      text: "You could be the next millionaire. Start saving now and get rewarded."
+    },
+    {
+      background: first,
+      title: "Convenience at Your Fingertips",
+      text: "The UBA Mobile App is the perfect blend of control, support, flexibility and fun."
+    },
+    {
+      background: first,
+      title: "Your Africa Trade Partner",
+      text: "We understand the complexities of the global market. Our products and services have been designed to ease your banking needs."
+    },
+    {
+      background: first,
+      title: "Serving Customers Across the Middle East",
+      text: "The birth UBA Dubai is in line with our vision. We are global in outlook and competence, African by heart and knowledge, and a bridge to the world economy."
+    },
+    {
+      background: first,
+      title: " A Gateway Between Africa and North America ",
+      text: "As the only sub-saharan African bank with an operational banking licence in the U.S., UBA America provides critical services to those in and out of Africa."
+    },
+    {
+      background: first,
+      title: " Hi! My Name is Leo, Your Ultimate Banking Buddy",
+      text: "Check out all the cool ways we can be friends; Google Business Chat, Apple Messages, Facebook, Whatsapp, Instagram. Just say Hi and let's get talking."
+    },
+    {
+      background: first,
+      title: " Excellent Service... Delivered",
+      text: "Now fully positioned as a pan-African bank, UBA Group is firmly at the forefront of driving the renaissance of the African economy."
+    },
+  ]
   return (
     <div className=" mt-[70px] ">
         <section>
+          <div className="relative h-[75vh]">
+          <div className=" absolute inset-0 bg-cover bg-center" style={{backgroundImage: `url(${first})`,
+              borderRadius: "6px"}}></div>
+
+              {/* overlay */}
+          <div className="absolute inset-0 bg-[#280502] opacity-50 bg-center"></div>
+          <div className="absolute text-white flex items-center justify-center inset-4">
+          <div className=" text-center px-4">
+            <h1 className="text-[40px] font-bold leading-[50px] mb-8">Save and win millions</h1>
+            <p className="text-[20px] mb-5">You could be the next millionaire. Start saving now and get rewarded</p>
+            <button className="px-5 mt-5 py-2 rounded-md bg-[#e01304c3] text-white">GET STARTED</button>
+          </div>
+          </div>
+          </div>
+
+          
             
         </section>
 
@@ -96,16 +152,88 @@ const LandingPage = () => {
                 <h1 className="text-[22px] mb-8 font-medium leading-7">Physical Fitness, Regular Checks Essential for Good Financial Decisions, Experts Tell SMEs in UBA Business Series.</h1>
                 <a href="#" className="text-[#CD1307]">READ MORE</a>
               </div>
-              <div className=" p-3 text-[14px] flex gap-1 justify-end">
+              <div className=" p-3 text-[14px] flex gap-1 justify-end mb-20">
                 {circle?.map((prop, index)=>(
                   <div onClick={()=>setActive(index)} className={active === index ? "text-[#CD1307]" : "text-[#d26861f8]"} key={index}>
-                    
                     {prop}
                   </div>
                 ))}
               </div>
           </div>
         </section>
+
+        <section className="  py-10">
+          <div className="relative h-[420px]">
+              <div className=" absolute inset-0 bg-cover bg-center" style={{backgroundImage: `url(${map})`,
+            borderRadius: "6px"}}></div>
+          <div className="inset-0 bg-black opacity-90 absolute"></div>
+          <div className="absolute inset-0 flex items-center justify-center">
+          <div className="">
+          <h1 className="text-white text-center font-semibold text-[25px] leading-8 ">Get the right account for your personal and business needs</h1>
+          <div className=" my-7 flex flex-col items-center gap-y-3">
+          <button className="px-4 py-2 rounded-md bg-red-700 text-white shadow-lg">OPEN A PERSONAL ACCOUNT</button>
+          
+          <p className="text-gray-300">OR</p>
+          <button className="text-red-700 px-8 py-2 rounded-md  border-2 border-gray-300 shadow-lg">OPEN A BUSINESS ACCOUNT</button>
+          </div>
+          </div>
+          </div>
+          </div>
+
+        </section>
+
+          <section className="relative mt-10">
+              <div className=" relative h-[420px]">
+                <div className=" mx-3 absolute inset-0 bg-cover bg-center" style={{backgroundImage: 'url(/UBAnorth.jpg)',
+              borderRadius: "6px"}}></div>
+              </div>
+
+              <div className="absolute inset-0 bg-gray-800 rounded-md  mx-3 opacity-50 bg-center"></div>
+              <div className="absolute inset-4 flex items-center justify-center  text-white">
+                <div className="text-center px-2">
+                  <p className="text-[20px] mb-4">PRESS RELEASE</p>
+                  <h3 className="text-[24px] font-medium leading-7 pb-8">Stay updated with press release</h3>
+                  <p className="text-[19px] leading-7">UBA is dedicated to providing timely, accurate and balanced disclosure of all material information about the Bank.</p>
+                  <button className="px-5 mt-5 py-2 rounded-md bg-[#CD1307] text-white">LEARN MORE</button>
+                </div>
+              </div>
+
+          </section>
+
+          <section className="px-4 my-10">
+            <div className="bg-slate-100 pb-4 text-center shadow">
+              <h1 className="text-[30px] pt-10 font-bold leading-9">Banking beyond the norm</h1>
+              <p className="text-[25px] leading-8 mt-5">Take a closer look at other things we support</p>
+              <div className=" h-[300px] mt-10 mx-auto w-[300px] rounded-full ">
+                <img src={round} className="object-cover rounded-full h-full w-full" alt="" />
+              </div>
+              <h1 className="text-[30px] py-6 font-medium leading-9">UBA <br /> FOUNDATION</h1>
+            </div>
+          </section>
+
+          <section className=" bg-[#CD1307] text-white mx-3">
+            <div className=" px-3 py-10">
+              <h1 className="text-[32px] mb-3 font-bold leading-10 text-center">Can't find what you're searching for?</h1>
+              <p className="text-[18px] mb-1">Fill in the details below</p>
+              <form className="flex flex-col w-full space-y-4" >
+                <input className="h-[45px] rounded-md px-2" type="text" placeholder="Full Name" />
+                <input className="h-[45px] rounded-md px-2"  type="email" placeholder="Email" />
+                <input className="h-[45px] rounded-md px-2"  type="tel" placeholder="Phone Number" />
+                <select className="h-[45px] rounded-md px-1 text-gray-500 border-0 outline-none"  name="">
+                  <option value="" selected>What is your interest?</option>
+                  <option value="">Card</option>
+                  <option value="">Corporate Banking</option>
+                  <option value="">Digital Banking</option>
+                </select>
+                <textarea name="" className="h-[100px] rounded-md px-2"  placeholder="Message"></textarea>
+                <div className=" flex items-center gap-x-3">
+                <input type="checkbox" />
+                 <p>I accept the <span>terms and conditions</span> of use.</p>
+                </div>
+                <button className="shadow-lg py-2 bg-red-950 rounded-md" type="submit">SEND</button>
+              </form>
+            </div>
+          </section>
 
     </div>
   )
