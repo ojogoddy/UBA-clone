@@ -9,47 +9,68 @@ import {useState} from "react"
 import round from "../assets/UBA-Foundation-2-scaled.jpg"
 import first from "../assets/Supersavers-Website-banner-B.jpg"
 import map from "../assets/world-map.png"
+
 import Carousel from "../component/Carousel"
+
+import message from "../assets/Messages-for-Business-Icon.svg"
+import a from "../assets/UBA-Leadership-header2-1.jpg"
+import b from "../assets/UBA-Group-Achievements.jpg"
+import c from "../assets/UBA-Header-inner-page-about-uba.jpg"
+
 const LandingPage = () => {
   const [active, setActive] = useState(0)
   const circle = [<FaCircle/>, <FaCircle/>, <FaCircle/>, <FaCircle/>]
-  const hero =[
+  const redsample = [
     {
-      background: first,
-      title: "Save and win million",
-      text: "You could be the next millionaire. Start saving now and get rewarded."
+      bgImage: a,
+      text: "Leadership"
     },
     {
-      background: first,
-      title: "Convenience at Your Fingertips",
-      text: "The UBA Mobile App is the perfect blend of control, support, flexibility and fun."
+      bgImage: b,
+      text: "Achievements"
     },
     {
-      background: first,
-      title: "Your Africa Trade Partner",
-      text: "We understand the complexities of the global market. Our products and services have been designed to ease your banking needs."
-    },
-    {
-      background: first,
-      title: "Serving Customers Across the Middle East",
-      text: "The birth UBA Dubai is in line with our vision. We are global in outlook and competence, African by heart and knowledge, and a bridge to the world economy."
-    },
-    {
-      background: first,
-      title: " A Gateway Between Africa and North America ",
-      text: "As the only sub-saharan African bank with an operational banking licence in the U.S., UBA America provides critical services to those in and out of Africa."
-    },
-    {
-      background: first,
-      title: " Hi! My Name is Leo, Your Ultimate Banking Buddy",
-      text: "Check out all the cool ways we can be friends; Google Business Chat, Apple Messages, Facebook, Whatsapp, Instagram. Just say Hi and let's get talking."
-    },
-    {
-      background: first,
-      title: " Excellent Service... Delivered",
-      text: "Now fully positioned as a pan-African bank, UBA Group is firmly at the forefront of driving the renaissance of the African economy."
+      bgImage: c,
+      text: "About UBA"
     },
   ]
+  // const hero =[
+  //   {
+  //     background: first,
+  //     title: "Save and win million",
+  //     text: "You could be the next millionaire. Start saving now and get rewarded."
+  //   },
+  //   {
+  //     background: first,
+  //     title: "Convenience at Your Fingertips",
+  //     text: "The UBA Mobile App is the perfect blend of control, support, flexibility and fun."
+  //   },
+  //   {
+  //     background: first,
+  //     title: "Your Africa Trade Partner",
+  //     text: "We understand the complexities of the global market. Our products and services have been designed to ease your banking needs."
+  //   },
+  //   {
+  //     background: first,
+  //     title: "Serving Customers Across the Middle East",
+  //     text: "The birth UBA Dubai is in line with our vision. We are global in outlook and competence, African by heart and knowledge, and a bridge to the world economy."
+  //   },
+  //   {
+  //     background: first,
+  //     title: " A Gateway Between Africa and North America ",
+  //     text: "As the only sub-saharan African bank with an operational banking licence in the U.S., UBA America provides critical services to those in and out of Africa."
+  //   },
+  //   {
+  //     background: first,
+  //     title: " Hi! My Name is Leo, Your Ultimate Banking Buddy",
+  //     text: "Check out all the cool ways we can be friends; Google Business Chat, Apple Messages, Facebook, Whatsapp, Instagram. Just say Hi and let's get talking."
+  //   },
+  //   {
+  //     background: first,
+  //     title: " Excellent Service... Delivered",
+  //     text: "Now fully positioned as a pan-African bank, UBA Group is firmly at the forefront of driving the renaissance of the African economy."
+  //   },
+  // ]
   return (
     <div className=" mt-[70px] ">
         <section>
@@ -236,6 +257,28 @@ const LandingPage = () => {
             </div>
           </section>
           <Carousel/>     
+
+          <section>
+            <div className="flex justify-center flex-col items-center space-y-5">
+              <p className="text-[30px] font-medium">Got questions?</p>
+              <div className=" w-[90px] h-[90px] ">
+                <img src={message} alt="" className="" />
+              </div>
+              <p className="text-[30px] font-medium text-center">Chat with Leo on Apple Messages</p>
+            </div>
+            {redsample?.map((prop, index)=>(
+              <div className="" key={index}>
+                <div className="relative h-[200px]">
+              <div className="absolute inset-0 bg-cover bg-center" style={{backgroundImage: `url(${prop.bgImage})`}}></div>
+
+              <div className="absolute inset-0 bg-red-500 opacity-50 bg-center"></div>
+              <h1 className="absolute inset-4 flex items-center justify-center text-white text-[40px] font-semibold">{prop.text}</h1>
+
+            </div>
+              </div>
+            ))}
+            
+          </section>
 
     </div>
   )
