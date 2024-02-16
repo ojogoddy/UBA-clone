@@ -9,6 +9,7 @@ import {useState} from "react"
 import round from "../assets/UBA-Foundation-2-scaled.jpg"
 import first from "../assets/Supersavers-Website-banner-B.jpg"
 import map from "../assets/world-map.png"
+import Carousel from "../component/Carousel"
 const LandingPage = () => {
   const [active, setActive] = useState(0)
   const circle = [<FaCircle/>, <FaCircle/>, <FaCircle/>, <FaCircle/>]
@@ -124,7 +125,7 @@ const LandingPage = () => {
           </div>
         </section>
 
-        <section className="px-4 mt-5">
+        <section className="px-4 mt-5 ">
           <div className=" shadow-lg pt-3">
               <div className="h-[280px] w-full ">
               <img src={leobday} className="rounded-md h-full object-cover object-right-[20]" alt="" />
@@ -234,6 +235,7 @@ const LandingPage = () => {
               </form>
             </div>
           </section>
+          <Carousel/>     
 
     </div>
   )
